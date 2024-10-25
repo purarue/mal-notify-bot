@@ -15,20 +15,20 @@ The code is generally up here as reference, I don't see a major reason why one w
 Nevertheless, to create your own instance of the bot, create a server which has two channels named `feed` and `nsfw-feed`, [add the bot to it](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token), and then:
 
 ```
-git clone https://github.com/seanbreckenridge/mal-notify-bot
+git clone https://github.com/purarue/mal-notify-bot
 cd mal-notify-bot
 python3 -m pip install pipenv  # if you don't have pipenv already
 pipenv install
 pipenv shell
-git clone https://github.com/seanbreckenridge/mal-id-cache
+git clone https://github.com/purarue/mal-id-cache
 touch token.yaml
 ```
 
-This uses a file in this directory called `old` which caches the already printed entries; if one was to start this on a new server, it would send every entry since it hasn't sent any yet (it doesn't know which ones are 'new'). You can use my [`mal-id-cache`](https://github.com/seanbreckenridge/mal-id-cache) repository as a base, by reading in the SFW/NSFW IDs for anime, and saving those to a file named `old`. The format is just a text file, with one entry per line.
+This uses a file in this directory called `old` which caches the already printed entries; if one was to start this on a new server, it would send every entry since it hasn't sent any yet (it doesn't know which ones are 'new'). You can use my [`mal-id-cache`](https://github.com/purarue/mal-id-cache) repository as a base, by reading in the SFW/NSFW IDs for anime, and saving those to a file named `old`. The format is just a text file, with one entry per line.
 
 Could create the initial 'old' file by running:
 
-`curl -s 'https://raw.githubusercontent.com/seanbreckenridge/mal-id-cache/master/cache/anime_cache.json' | jq -r '.sfw + .nsfw | .[]' >'old'`
+`curl -s 'https://raw.githubusercontent.com/purarue/mal-id-cache/master/cache/anime_cache.json' | jq -r '.sfw + .nsfw | .[]' >'old'`
 
 put your bots token in `token.yaml` with contents like:
 
