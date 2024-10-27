@@ -474,7 +474,7 @@ async def refresh(ctx: commands.Context, mal_id: int) -> None:
                         f"Successfully refreshed data on {mal_id} on dbsentinel"
                     )
                     await ctx.channel.send(
-                        f"Successfully refreshed data for {mal_id} on dbsentinel: <https://sean.fish/dbsentinel/anime/{mal_id}>"
+                        f"Successfully refreshed data for {mal_id} on dbsentinel: <https://purarue.xyz/dbsentinel/anime/{mal_id}>"
                     )
                 else:
                     logger.warning(
